@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -22,5 +21,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Upload Files to S3
-        run: |
-          aws s3 sync . s3://${{ secrets.S3_BUCKET }} --delete
+        run: aws s3 sync . s3://${{ secrets.S3_BUCKET }} --delete
